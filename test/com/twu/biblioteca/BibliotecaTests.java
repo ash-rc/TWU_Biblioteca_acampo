@@ -8,35 +8,35 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
 /**
  * Created by ashleycampo on 6/17/14.
  */
 public class BibliotecaTests {
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    Library library;
+    private Library library;
 
     @Before
     public void setUp() {
         library = new Library();
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @After
-    public void cleanUp() {
-        System.setOut(null);
     }
 
     @Test
     public void testWelcomeMessage() {
-        library.displayWelcomeMessage();
-        Assert.assertEquals("Welcome to Biblioteca!\n", outContent.toString());
+        PrintStream mockStream = mock(PrintStream.class);
+
+        library.displayWelcomeMessage(mockStream);
+
+        verify(mockStream).println("Welcome to Biblioteca!");
 
     }
 
     @Test
     public void testListBooks() {
-        library.listBooks();
+        PrintStream mockStream = mock(PrintStream.class);
+        library.listBooks(mockStream);
+        verify(mockStream).println("Head First Java\tBill\t1924");
 
-        Assert.assertEquals("Head First Java\n", outContent.toString());
     }
 }
