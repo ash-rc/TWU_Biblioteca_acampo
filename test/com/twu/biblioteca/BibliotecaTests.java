@@ -45,4 +45,15 @@ public class BibliotecaTests {
         library.displayMenu(mockStream);
         verify(mockStream).println("(0) List Books");
     }
+
+    @Test
+    public void checkInvalidInput() {
+        PrintStream mockStream = mock(PrintStream.class);
+        library.executeCommand("bla", mockStream);
+
+        verify(mockStream).println("Select a valid option!");
+
+
+
+    }
 }

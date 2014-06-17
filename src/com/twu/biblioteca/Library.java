@@ -30,4 +30,8 @@ public class Library {
             out.println("(" + menuOptions.indexOf(option) + ") " + option);
         }
     }
+
+    public void executeCommand(String command, PrintStream out) {
+        out.println("Select a valid option!");
+    }
 }
