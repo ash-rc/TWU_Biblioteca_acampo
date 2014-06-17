@@ -17,9 +17,9 @@ public class Library {
         out.println("Welcome to Biblioteca!");
     }
 
-    public void listBooks() {
+    public void listBooks(PrintStream out) {
         for(Book b : books) {
-            System.out.println(b.toString());
+            out.println(b.toString());
         }
     }
 }
