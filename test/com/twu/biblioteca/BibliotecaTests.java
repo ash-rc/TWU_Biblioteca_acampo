@@ -37,6 +37,5 @@ public class BibliotecaTests {
         PrintStream mockStream = mock(PrintStream.class);
         library.listBooks(mockStream);
         verify(mockStream).println("Head First Java\tBill\t1924");
-
     }
 }
