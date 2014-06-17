@@ -36,7 +36,7 @@ public class BibliotecaTests {
     public void testListBooks() {
         PrintStream mockStream = mock(PrintStream.class);
         library.listBooks(mockStream);
-        verify(mockStream).println("Head First Java\tBill\t1924");
+        verify(mockStream).println("Head First ava\tBill\t1924");
     }
 
     @Test
@@ -52,8 +52,6 @@ public class BibliotecaTests {
         library.executeCommand("bla", mockStream);
 
         verify(mockStream).println("Select a valid option!");
-
-
-
     }
+
 }

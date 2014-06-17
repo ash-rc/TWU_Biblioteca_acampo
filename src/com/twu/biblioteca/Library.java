@@ -7,11 +7,13 @@ import java.util.ArrayList;
  * Created by ashleycampo on 6/17/14.
  */
 public class Library {
+
     ArrayList<Book> books = new ArrayList<Book>();
     ArrayList<String> menuOptions = new ArrayList<String>();
 
     public Library() {
         books.add(new Book("Head First Java", "Bill", "1924"));
+        books.add(new Book("Game of Thrones", "J.R.R. Martin", "1992"));
         menuOptions.add("List Books");
     }
 
@@ -21,7 +23,7 @@ public class Library {
 
     public void listBooks(PrintStream out) {
         for(Book b : books) {
-            out.println(b.toString());
+            b.print(out);
         }
     }
 
