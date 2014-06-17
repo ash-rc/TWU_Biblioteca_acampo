@@ -43,6 +43,6 @@ public class BibliotecaTests {
     public void testDisplayMenu(){
         PrintStream mockStream = mock(PrintStream.class);
         library.displayMenu(mockStream);
-        verify(mockStream).println("List Books");
+        verify(mockStream).println("(0) List Books");
     }
 }

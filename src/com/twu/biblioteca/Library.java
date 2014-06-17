@@ -8,10 +8,11 @@ import java.util.ArrayList;
  */
 public class Library {
     ArrayList<Book> books = new ArrayList<Book>();
-    String[] menuOptions = {"List Books"};
+    ArrayList<String> menuOptions = new ArrayList<String>();
 
     public Library() {
         books.add(new Book("Head First Java", "Bill", "1924"));
+        menuOptions.add("List Books");
     }
 
     public void displayWelcomeMessage(PrintStream out) {
@@ -26,7 +27,7 @@ public class Library {
 
     public void displayMenu(PrintStream out) {
         for (String option : menuOptions){
-            out.println(option);
+            out.println("(" + menuOptions.indexOf(option) + ") " + option);
         }
     }
 }
